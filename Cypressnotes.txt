@@ -1,0 +1,100 @@
+Install Visual source code - IDE and create a test project folder 
+
+install Node.js
+
+Add below to path in user variables (environment variable)
+C:\Program Files\nodejs\
+
+to check node js version :  node --version 
+
+
+
+-----------------------------------------------------------------------
+run npm command in command prompt: npm
+
+Reopen visual stuido code IDE-> open the test project folder 
+
+run below command in terminal to initialize, this will create a package.json file in the test project folder:
+
+npm init -y  
+
+npm is javascript's package manager (like maven), Installing cypress -> install cypress inside the test project folder:
+
+npm install cypress@9  
+
+9 is the version of cypress, we can give any version number and the version will be installed for that particular test only 
+
+------------------------------------------------------------------------
+
+To run cypress for the first time (Interactively)
+
+npx cypress open
+
+this would create the folder structre for cypress tests 
+
+http://todomvc-app-for-testing.surge.sh/   
+-------------------------------------------------------------------------
+
+Mocha comes built in with cypress (need not install it seperately)  and is the only test framework supported by cypress
+-------------------------------------------------------------------------
+
+To disable auto-test run on code changes, add below command in cypress.json
+
+{
+    "watchForFileChanges": false
+
+}
+
+-----------------------------------------------------------------------------------
+To run all scripts interactively
+npx cypress open
+
+Non-interactively and headless mode:
+npx cypress run 
+
+To know all commands:
+npm cypress run --help 
+
+To run a particular script
+npx cypress run --spec cypress/integration/todomvc-filtering-spec.js
+---------------------------------------------------------------------------------------
+push to git repository and other team member could clone and run "npm install" to setp on their local machine
+
+Add below in package.json before pushing :
+
+ "scripts": {
+    "cypress": "cypress open",
+    "test": "cypress run"
+  },
+  
+the standard way to run the tests in an NPM package
+  
+npm run test or npm test   
+
+ 
+-------------------------------------------------------------------------------------
+applitools 
+
+npm install @applitools/eyes-cypress
+
+add applitools apikey in terminal
+set APPLITOOLS_API_KEY=APIKKEYVALUE
+
+---------------------------------------------------------------------------------
+Installng typescript:
+
+open command prompt on computer-> npm install -g typescript
+
+g means install it globally on computer
+
+To compile TS to JS:
+
+in the terminal under same directory where typescript & js file reside:
+tsc filename.ts filename.js
+or
+tsc filename.ts 
+
+both filenames should be same , if js file does not exists then compiler would create js file
+
+---------------------------------------------------------------------------------
+
